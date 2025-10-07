@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     # "dj_rest_auth.jwt_auth",
 
     "bitacora",
+    "pagos",
 ]
 
 AUTH_USER_MODEL = "users.CustomUser"
@@ -269,3 +270,7 @@ GOOGLE_OAUTH2_CLIENT_SECRET = os.getenv("GOOGLE_OAUTH2_CLIENT_SECRET", "")
 
 # Configuración de sitios para allauth
 SITE_ID = 1
+
+# ====== STRIPE CONFIGURATION ======
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY", "")
+STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY", "")
