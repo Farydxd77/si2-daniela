@@ -84,8 +84,8 @@ class PagoViewSet(viewsets.ModelViewSet):
         
         try:
             # Crear el pago en la BD
-            pago = serializer.save()
-            
+            pago = serializer.save(usuario=request.user)
+      
             # Si es pago con Stripe, crear Payment Intent
             if pago.metodo_pago == 'stripe':
                 # Validar que Stripe esté configurado

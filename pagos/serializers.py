@@ -47,14 +47,9 @@ class CrearPagoSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Pago
-        fields = [
-            'monto',
-            'metodo_pago',
-            'descripcion'
-        ]
+        fields = ['monto', 'metodo_pago', 'descripcion']
     
     def validate_monto(self, value):
-        """Validar que el monto sea positivo"""
         if value <= 0:
             raise serializers.ValidationError("El monto debe ser mayor a 0")
         if value > 999999.99:
